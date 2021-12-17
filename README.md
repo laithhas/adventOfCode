@@ -3,4 +3,4 @@ My solutions to the AdventOfCode — an annual, fun, holiday-themed set of codin
 
 To access this year's challenges, go to: https://adventofcode.com/
 
-For previous year's challenges, go to: https://adventofcode.com/[Previous year]
+For previous year's challenges, go to: https://adventofcode.com/[previous_year]
