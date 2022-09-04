@@ -15,7 +15,7 @@
 
 
 def part1():
-    inputFile = open('/Users/laith/adventOfCode/2021/day1/day1.txt')
+    inputFile = open('/Users/laith/adventOfCode/2021/day/1/input.txt')
     increasing = 0
     prevNum = float('inf')
     for line in inputFile:
@@ -27,7 +27,7 @@ def part1():
     inputFile.close()
 
 def part2():
-    inputFile = open('/Users/laith/adventOfCode/2021/day1/day1.txt')
+    inputFile = open('/Users/laith/adventOfCode/2021/day/1/input.txt')
     listNums = []
     for line in inputFile:
         listNums.append(int(line))
