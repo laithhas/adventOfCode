@@ -1,3 +1,5 @@
+# Problem: https://adventofcode.com/2021/day/4
+
 class BingoValue:
     def __init__(self, value):
         self.value = value
