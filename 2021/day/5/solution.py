@@ -1,5 +1,4 @@
-# Problem: https://adventofcode.com/2021/day/5
-'''day 5'''
+''' Problem: https://adventofcode.com/2021/day/5 '''
 
 # def part1():
 #     '''part1'''
