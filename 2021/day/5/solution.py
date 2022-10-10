@@ -51,8 +51,36 @@ class Vent:
                 for i in range(lesser_x, greater_x + 1):
                     self.grid[y1][i] += 1
             else:
-                pass
+                pass # diagonal line
 
+    def apply_diagonal_lines_to_grid(self) -> None:
+        ''' Take diagonal lines from self.lines and update grid accordingly '''
+        for line in self.lines:
+            x1, y1 = line[0][0], line[0][1]
+            x2, y2 = line[1][0], line[1][1]
+
+            if x1 == x2 and y1 == y2:
+                print('same point')
+            elif x1 == x2:
+                pass # vertical line
+            elif y1 == y2:
+                pass # horizontal line
+            elif x1 < x2 and y1 < y2: # SE diagonal
+                diff = x2 - x1
+                for i in range(diff + 1):
+                    self.grid[y1 + i][x1 + i] += 1
+            elif x1 > x2 and y1 > y2: # NW diagonal
+                diff = x1 - x2
+                for i in range(diff + 1):
+                    self.grid[y1 - i][x1 - i] += 1
+            elif x1 < x2 and y1 > y2: # NE diagonal
+                diff = x2 - x1
+                for i in range(diff + 1):
+                    self.grid[y1 - i][x1 + i] += 1
+            elif x1 > x2 and y1 < y2: # SW diagonal
+                diff = x1 - x2
+                for i in range(diff + 1):
+                    self.grid[y1 + i][x1 - i] += 1
 
     def print_vent_grid(self) -> None:
         ''' print out the vent grid in a nice manner '''
@@ -75,6 +103,18 @@ class Vent:
                     solution += 1
         print(f'Part 1: {solution}')
 
+    def print_solution_2(self) -> None:
+        ''' solution part 2 '''
+        self.apply_straight_lines_to_grid()
+        self.apply_diagonal_lines_to_grid()
+        # self.print_vent_grid()
+        solution = 0
+        for row in self.grid:
+            for value in row:
+                if value >= 2:
+                    solution += 1
+        print(f'Part 2: {solution}')
+
 def part1():
     '''part1'''
     vent = Vent('/Users/laith/adventOfCode/2021/day/5/input.txt')
@@ -82,8 +122,8 @@ def part1():
 
 def part2():
     '''part2'''
-    input_file = open('/Users/laith/adventOfCode/2021/day/5/test.txt', encoding="utf-8")
-    input_file.close()
+    vent = Vent('/Users/laith/adventOfCode/2021/day/5/input.txt')
+    vent.print_solution_2()
 
 part1()
 part2()
