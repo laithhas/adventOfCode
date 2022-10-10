@@ -1,1 +1,0 @@
-''' Was going to write a little script that will generate test input '''

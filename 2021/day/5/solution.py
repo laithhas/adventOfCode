@@ -67,7 +67,7 @@ class Vent:
     def print_solution_1(self) -> None:
         ''' solution part 1 '''
         self.apply_straight_lines_to_grid()
-        self.print_vent_grid()
+        # self.print_vent_grid()
         solution = 0
         for row in self.grid:
             for value in row:
@@ -77,7 +77,7 @@ class Vent:
 
 def part1():
     '''part1'''
-    vent = Vent('/Users/laith/adventOfCode/2021/day/5/test2.txt')
+    vent = Vent('/Users/laith/adventOfCode/2021/day/5/input.txt')
     vent.print_solution_1()
 
 def part2():
