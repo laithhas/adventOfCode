@@ -1,5 +1,6 @@
 # Problem: https://adventofcode.com/2021/day/3
 
+
 def columnalGuideForOxygen(grid):
     columnalSum = []
     rows = len(grid)
@@ -11,11 +12,12 @@ def columnalGuideForOxygen(grid):
             columnalSum[i] += row[i]
     columnalGuide = []
     for csum in columnalSum:
-        if csum >= rows/2:
+        if csum >= rows / 2:
             columnalGuide.append(1)
         else:
             columnalGuide.append(0)
     return columnalGuide
+
 
 def columnalGuideForCo2(grid):
     columnalSum = []
@@ -28,11 +30,12 @@ def columnalGuideForCo2(grid):
             columnalSum[i] += row[i]
     columnalGuide = []
     for csum in columnalSum:
-        if csum < rows/2:
+        if csum < rows / 2:
             columnalGuide.append(1)
         else:
             columnalGuide.append(0)
     return columnalGuide
+
 
 class Diagnostic:
     def __init__(self, inputFile):
@@ -53,7 +56,7 @@ class Diagnostic:
         self.gamma = []
         self.epsilon = []
         for csum in self.columnalSum:
-            if csum > self.rows/2:
+            if csum > self.rows / 2:
                 self.gamma.append(1)
                 self.epsilon.append(0)
             else:
@@ -69,14 +72,18 @@ class Diagnostic:
         oxygenIndex = 0
         while len(self.oxygenFilter) > 1:
             guide = columnalGuideForOxygen(self.oxygenFilter)
-            filteredOxygen = filter(lambda line: line[oxygenIndex] == guide[oxygenIndex], self.oxygenFilter)
+            filteredOxygen = filter(
+                lambda line: line[oxygenIndex] == guide[oxygenIndex], self.oxygenFilter
+            )
             self.oxygenFilter = list(filteredOxygen)
             oxygenIndex += 1
 
         co2Index = 0
         while len(self.co2Filter) > 1:
             guide = columnalGuideForCo2(self.co2Filter)
-            filteredCo2 = filter(lambda line: line[co2Index] == guide[co2Index], self.co2Filter)
+            filteredCo2 = filter(
+                lambda line: line[co2Index] == guide[co2Index], self.co2Filter
+            )
             self.co2Filter = list(filteredCo2)
             co2Index += 1
 
@@ -94,25 +101,26 @@ class Diagnostic:
         print(self.columnalSum)
 
     def printSolution1(self):
-        print('part1: ' + str(self.gammaRate * self.epsilonRate) + '\n')
+        print("part1: " + str(self.gammaRate * self.epsilonRate) + "\n")
 
     def printSolution2(self):
         for row in self.oxygenFilter:
-                print(row)
+            print(row)
         for row in self.co2Filter:
-                print(row)
+            print(row)
 
-        print('part2: ' + str(self.oxygen * self.co2))
+        print("part2: " + str(self.oxygen * self.co2))
 
 
 def part1():
-    inputFile = open('/Users/laith/adventOfCode/2021/day/3/day3.txt')
+    inputFile = open("/Users/laith/adventOfCode/2021/day/3/day3.txt")
     report = Diagnostic(inputFile)
     inputFile.close()
     report.printSolution1()
 
+
 def part2():
-    inputFile = open('/Users/laith/adventOfCode/2021/day/3/day3.txt')
+    inputFile = open("/Users/laith/adventOfCode/2021/day/3/day3.txt")
     report = Diagnostic(inputFile)
     inputFile.close()
     report.printSolution2()
