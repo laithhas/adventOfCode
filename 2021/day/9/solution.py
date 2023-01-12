@@ -1,4 +1,4 @@
-""" Problem: https://adventofcode.com{PROBLEM_DAY} """
+""" Problem: https://adventofcode.com/2021/day/9 """
 PROBLEM_DAY = "/2021/day/9"
 
 
