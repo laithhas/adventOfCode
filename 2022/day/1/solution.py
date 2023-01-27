@@ -4,6 +4,8 @@ import heapq
 
 PROBLEM_DAY = "/2022/day/1"
 
+# hello noob
+
 
 class Solution:
     """A class representing the solution for this problem"""
