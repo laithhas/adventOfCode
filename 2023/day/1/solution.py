@@ -1,6 +1,6 @@
 ''' Problem: https://adventofcode.com/2023/day/1 '''
 PROBLEM_DAY = '/2023/day/1'
-AOC_ROOT_LOCATION = '/home/runner' # /Users/laith
+AOC_ROOT_LOCATION = '/Users/laith/code' # /Users/laith
 
 import re
 
